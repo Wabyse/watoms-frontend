@@ -10,7 +10,7 @@ import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/watoms/pms";
+  const from = location.state?.from?.pathname || "/pms";
   const [revealPassword, setRevealPassword] = useState(false);
   const { setUserCode } = useAuth();
   const { setUserInfo } = useAuth();

@@ -1,23 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
-import Pms from "./pages/Pms";
-import Form from "./pages/Form";
-import Dms from "./pages/Dms";
-import Home from "./pages/Home";
-import Tms from "./pages/Tms";
-import Assign from "./pages/Assign";
-import MyTasks from "./pages/MyTasks";
-import UploadDocument from "./pages/UploadDocument";
-import ViewDocument from "./pages/ViewDocument";
-import ViewTask from "./pages/ViewTask";
-import TeacherSubstitutions from "./pages/TeacherSubstitutions";
-import TeacherLatness from "./pages/TeacherLatness";
-import StudentAbsence from "./pages/StudentAbsence";
-import Interview from "./pages/Interview";
-import Test from "./pages/Test";
-import SchoolIncident from "./pages/SchoolIncident";
-import StudentBehavior from "./pages/StudentBehavior";
 import TomsPms from "./pages/TomsPms";
 import TomsForm from "./pages/TomsForm";
 import TraineeAbsence from "./pages/TraineeAbsence";
@@ -31,63 +14,14 @@ import TomsTms from "./pages/TomsTms";
 import TomsViewTask from "./pages/TomsViewTask";
 import TomsAssign from "./pages/TomsAssign";
 import TomsMyTasks from "./pages/TomsMyTask";
-import HomeEVOTS from "./pages/HomeEVOTS";
-import HomeCareers from "./pages/HomeCareers";
-import HomeAboutUs from "./pages/HomeAboutUs";
-import HomeContactUs from "./pages/HomeContactUs";
-import HomeServicesTraining from "./pages/HomeServicesTraining";
-import CheckInOut from "./pages/CheckInOut";
-import QRList from "./pages/QRList";
-import NeqatyLogin from "./pages/NeqatyLogin";
-import Neqaty from "./pages/Neqaty";
-import ProtectedAdminRoute from "./components/ProtectedAdminRoute";
-import ViewCheckInOut from "./pages/ViewCheckInOut";
-import NeqatySchool from "./pages/NeqatySchool";
-import NeqatyVtc from "./pages/NeqatyVtc";
-import NeqatySchoolPermissions from "./pages/NeqatySchoolPermission";
-import NeqatyVtcPermissions from "./pages/NeqatyVtcPermissions";
 import BulkData from "./pages/BulkData";
 
 function App() {
   return (
     <div className="font-sans">
-      <Router>
+      <Router basename="/watoms">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/evots" element={<HomeEVOTS />} />
-          <Route path="/careers" element={<HomeCareers />} />
-          <Route path="/aboutus" element={<HomeAboutUs />} />
-          <Route path="/contactus" element={<HomeContactUs />} />
-          <Route path="/services/training" element={<HomeServicesTraining />} />
-          <Route path="/checkin" element={<CheckInOut />} />
-          <Route path="/qrcodes" element={<QRList />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/neqaty/login" element={<NeqatyLogin />} />
-          <Route path="/neqaty" element={
-            <ProtectedAdminRoute>
-              <Neqaty />
-            </ProtectedAdminRoute>
-          } />
-          <Route path="/neqaty/schools" element={
-            <ProtectedAdminRoute>
-              <NeqatySchool />
-            </ProtectedAdminRoute>
-          } />
-          <Route path="/neqaty/vtcs" element={
-            <ProtectedAdminRoute>
-              <NeqatyVtc />
-            </ProtectedAdminRoute>
-          } />
-          <Route path="/neqaty/school-permissions" element={
-            <ProtectedAdminRoute>
-              <NeqatySchoolPermissions />
-            </ProtectedAdminRoute>
-          } />
-          <Route path="/neqaty/vtc-permissions" element={
-            <ProtectedAdminRoute>
-              <NeqatyVtcPermissions />
-            </ProtectedAdminRoute>
-          } />
           {/* <Route path="/signup" element={<SignUp />} /> */}
           <Route
             path="/bulk-data"
@@ -101,7 +35,7 @@ function App() {
             path="/pms"
             element={
               <ProtectedRoute>
-                <Pms />
+                <TomsPms />
               </ProtectedRoute>
             }
           />
@@ -109,140 +43,12 @@ function App() {
             path="/pms/form/:id"
             element={
               <ProtectedRoute>
-                <Form />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/pms/teacher-substitutions"
-            element={
-              <ProtectedRoute>
-                <TeacherSubstitutions />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/pms/teacher-latness"
-            element={
-              <ProtectedRoute>
-                <TeacherLatness />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/pms/student-absence"
-            element={
-              <ProtectedRoute>
-                <StudentAbsence />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/pms/student-behavior"
-            element={
-              <ProtectedRoute>
-                <StudentBehavior />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/pms/school-incident"
-            element={
-              <ProtectedRoute>
-                <SchoolIncident />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/pms/interview"
-            element={
-              <ProtectedRoute>
-                <Interview />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/pms/test"
-            element={
-              <ProtectedRoute>
-                <Test />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/dms"
-            element={
-              <ProtectedRoute>
-                <Dms />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/tms"
-            element={
-              <ProtectedRoute>
-                <Tms />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/dms/upload"
-            element={
-              <ProtectedRoute>
-                <UploadDocument />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/dms/view/:id"
-            element={
-              <ProtectedRoute>
-                <ViewDocument />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/tms/assign"
-            element={
-              <ProtectedRoute>
-                <Assign />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/tms/my-tasks"
-            element={
-              <ProtectedRoute>
-                <MyTasks />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/tms/view/:id"
-            element={
-              <ProtectedRoute>
-                <ViewTask />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/watoms/pms"
-            element={
-              <ProtectedRoute>
-                <TomsPms />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/watoms/pms/form/:id"
-            element={
-              <ProtectedRoute>
                 <TomsForm />
               </ProtectedRoute>
             }
           />
           <Route
-            path="/watoms/pms/trainee-absence"
+            path="/pms/trainee-absence"
             element={
               <ProtectedRoute>
                 <TraineeAbsence />
@@ -250,7 +56,7 @@ function App() {
             }
           />
           <Route
-            path="/watoms/pms/inistitute-incident"
+            path="/pms/inistitute-incident"
             element={
               <ProtectedRoute>
                 <InistituteIncident />
@@ -258,7 +64,7 @@ function App() {
             }
           />
           <Route
-            path="/watoms/pms/interview"
+            path="/pms/interview"
             element={
               <ProtectedRoute>
                 <TomsInterview />
@@ -266,7 +72,7 @@ function App() {
             }
           />
           <Route
-            path="/watoms/pms/test"
+            path="/pms/test"
             element={
               <ProtectedRoute>
                 <TomsTest />
@@ -274,7 +80,7 @@ function App() {
             }
           />
           <Route
-            path="/watoms/dms"
+            path="/dms"
             element={
               <ProtectedRoute>
                 <TomsDms />
@@ -282,7 +88,7 @@ function App() {
             }
           />
           <Route
-            path="/watoms/dms/upload"
+            path="/dms/upload"
             element={
               <ProtectedRoute>
                 <TomsUploadDocument />
@@ -290,7 +96,7 @@ function App() {
             }
           />
           <Route
-            path="/watoms/dms/view/:id"
+            path="/dms/view/:id"
             element={
               <ProtectedRoute>
                 <TomsViewDocument />
@@ -298,7 +104,7 @@ function App() {
             }
           />
           <Route
-            path="/watoms/tms"
+            path="/tms"
             element={
               <ProtectedRoute>
                 <TomsTms />
@@ -306,7 +112,7 @@ function App() {
             }
           />
           <Route
-            path="/watoms/tms/assign"
+            path="/tms/assign"
             element={
               <ProtectedRoute>
                 <TomsAssign />
@@ -314,7 +120,7 @@ function App() {
             }
           />
           <Route
-            path="/watoms/tms/my-tasks"
+            path="/tms/my-tasks"
             element={
               <ProtectedRoute>
                 <TomsMyTasks />
@@ -322,18 +128,10 @@ function App() {
             }
           />
           <Route
-            path="/watoms/tms/view/:id"
+            path="/tms/view/:id"
             element={
               <ProtectedRoute>
                 <TomsViewTask />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/checkIns"
-            element={
-              <ProtectedRoute>
-                <ViewCheckInOut />
               </ProtectedRoute>
             }
           />
